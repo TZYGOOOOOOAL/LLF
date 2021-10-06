@@ -1,13 +1,14 @@
 # 简单实现 LLF （Local Laplacian Filters） 以及 Fast LLF
 
 ## 注意插值过程
-y = (1-a) * $x_i$ + a * $x_{i+1}$
-可记为：
-y = 0;
-for i in range(N)
-	y += $a_i$ * $x_i$
-
-其中 $a_i$ = |x - $x_i$| / step  (a为[0,1]插值加权系数)
+y = (1-a) * x_i + a * x_{i+1}  
+可记为：  
+```
+y = 0;  
+for i in range(N) 
+	y += a_i * x_i
+```
+其中 $a_i$ = |x - x_i| / step  (a为[0,1]插值加权系数)
 
 ## remap 函数
 注意fast LLF原MATLAB实现 remap函数 与 原始LLF不同，
